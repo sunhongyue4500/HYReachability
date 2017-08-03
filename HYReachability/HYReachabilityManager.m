@@ -1,24 +1,24 @@
 //
-//  LDCPReachabilityManager.h
-//  BUAA
+//  HYReachabilityManager.m
+//  HY
 //
 //  Created by sunhongyue on 2017/7/21.
 //  Copyright © 2017年 sunhongyue. All rights reserved.
 //
 
-#import "LDCPReachabilityManager.h"
+#import "HYReachabilityManager.h"
 #import "Reachability.h"
 
-NSString *const kLDCPReachabilityChangedNotification = @"kLDCPReachabilityChangedNotification";
+NSString *const kHYReachabilityChangedNotification = @"kHYReachabilityChangedNotification";
 
-@interface LDCPReachabilityManager ()
+@interface HYReachabilityManager ()
 
 @property (nonatomic, strong) Reachability *reachability;
 @property (nonatomic, assign) BOOL startNotifierFlag;
 
 @end
 
-@implementation LDCPReachabilityManager
+@implementation HYReachabilityManager
 
 #pragma mark - Life Cycle
 
@@ -26,12 +26,12 @@ NSString *const kLDCPReachabilityChangedNotification = @"kLDCPReachabilityChange
     // Attempt to initialize the shared instance so that NSNotifications are
     // sent even if you never initialize the class
     @autoreleasepool {
-        [LDCPReachabilityManager sharedManager];
+        [HYReachabilityManager sharedManager];
     }
 }
 
-+ (LDCPReachabilityManager *)sharedManager {
-    static LDCPReachabilityManager *sharedInstance = nil;
++ (HYReachabilityManager *)sharedManager {
+    static HYReachabilityManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
@@ -61,7 +61,7 @@ NSString *const kLDCPReachabilityChangedNotification = @"kLDCPReachabilityChange
         if (reachability == weakSelf.reachability)
             // this makes sure the change notification happens on the MAIN THREAD
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[NSNotificationCenter defaultCenter] postNotificationName:kLDCPReachabilityChangedNotification object:weakSelf];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kHYReachabilityChangedNotification object:weakSelf];
             });
     };
     
@@ -97,8 +97,8 @@ NSString *const kLDCPReachabilityChangedNotification = @"kLDCPReachabilityChange
     }
 }
 
-+ (LDCPNetworkStatus)currentReachabilityStatus {
-    return (LDCPNetworkStatus)[[[self sharedManager] reachability] currentReachabilityStatus];
++ (HYNetworkStatus)currentReachabilityStatus {
+    return (HYNetworkStatus)[[[self sharedManager] reachability] currentReachabilityStatus];
 }
 
 + (BOOL)isReachable {

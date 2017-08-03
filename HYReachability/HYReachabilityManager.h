@@ -1,6 +1,6 @@
 //
-//  LDCPReachabilityManager.h
-//  BUAA
+//  HYReachabilityManager.h
+//  HY
 //
 //  Created by sunhongyue on 2017/7/21.
 //  Copyright © 2017年 sunhongyue. All rights reserved.
@@ -10,22 +10,22 @@
 @class Reachability;
 
 /** 状态变化时单例对象发的通知*/
-extern NSString *const kLDCPReachabilityChangedNotification;
+extern NSString *const kHYReachabilityChangedNotification;
 
 /**
  Network status
  */
-typedef NS_ENUM(NSUInteger, LDCPNetworkStatus) {
-    LDCPNetworkNotReachable = 0,
-    LDCPNetworkReachableViaWWAN = 1,
-    LDCPNetworkReachableViaWiFi = 2
+typedef NS_ENUM(NSUInteger, HYNetworkStatus) {
+    HYNetworkNotReachable = 0,
+    HYNetworkReachableViaWWAN = 1,
+    HYNetworkReachableViaWiFi = 2
 };
 
 /**
  对Reachability的封装，简化API。
- 单例LDCPReachabilityManager内部封装了一个Reachability对象，通过将setStartNotifier设置为YES来开启监听。
+ 单例HYReachabilityManager内部封装了一个Reachability对象，通过将setStartNotifier设置为YES来开启监听。
  */
-@interface LDCPReachabilityManager : NSObject
+@interface HYReachabilityManager : NSObject
 
 /**
  开启或关闭网络状态改变的监听
@@ -38,7 +38,7 @@ typedef NS_ENUM(NSUInteger, LDCPNetworkStatus) {
 + (BOOL)isReachableViaWWAN;
 + (BOOL)isReachableViaWiFi;
 
-+ (LDCPNetworkStatus)currentReachabilityStatus;
++ (HYNetworkStatus)currentReachabilityStatus;
 
 /**
  对Reachability reachabilityForInternetConnection方法的封装，没有做额外操作。使用这个方法如果调用了返回实例的startNotifier，可以持有这个实例来判断是谁发的通知，或者addObserver的时候指定发送通知的对象
