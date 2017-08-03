@@ -1,0 +1,6 @@
+framework module HYReachability {
+  umbrella header "HYReachability-umbrella.h"
+
+  export *
+  module * { export * }
+}

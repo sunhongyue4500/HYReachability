@@ -1,0 +1,16 @@
+PODS:
+  - HYReachability (0.1.0)
+
+DEPENDENCIES:
+  - HYReachability (from `../`)
+
+EXTERNAL SOURCES:
+  HYReachability:
+    :path: ../
+
+SPEC CHECKSUMS:
+  HYReachability: ba1921efad31848fb4698abdbf6db594fee919d3
+
+PODFILE CHECKSUM: 54ebaa1c42ffb52ed0c9f686f2bac1b0181c3ddc
+
+COCOAPODS: 1.2.1

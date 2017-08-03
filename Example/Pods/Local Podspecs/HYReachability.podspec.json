@@ -1,0 +1,22 @@
+{
+  "name": "HYReachability",
+  "version": "0.1.0",
+  "summary": "A short description of HYReachability.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/sunhongyue/HYReachability",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "sunhongyue": "sunhongyue@corp.netease.com"
+  },
+  "source": {
+    "git": "https://github.com/sunhongyue/HYReachability.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "HYReachability/Classes/**/*"
+}

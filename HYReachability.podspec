@@ -8,35 +8,20 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HYReachability'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of HYReachability.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/sunhongyue/HYReachability'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sunhongyue' => 'sunhongyue@corp.netease.com' }
-  s.source           = { :git => 'https://github.com/sunhongyue/HYReachability.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.version          = '0.1.1'
+  s.summary          = 'HYReachability'
+  s.description      = 'HYReachability, Wrapper of Reachability(Tony Million)'
+  s.homepage         = 'https://github.com/sunhongyue4500/HYReachability'
+  s.license          = 'MIT'
+  s.author           = { "hongyi" => "sunhongyue4500@gmail.com" }
+  s.source           = { :git => "https://github.com/sunhongyue4500/HYReachability.git", :tag => s.version.to_s }
+  s.platform     = :ios, '8.0'
   s.ios.deployment_target = '8.0'
-
-  s.source_files = 'HYReachability/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'HYReachability' => ['HYReachability/Assets/*.png']
-  # }
+  s.requires_arc = true
+  s.source_files = 'HYReachability'
+  s.dependency 'Reachability', '~> 3.2'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+
 end
